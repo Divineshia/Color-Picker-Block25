@@ -4,7 +4,12 @@ import {useState} from "react";
 // Write your Color component here
 const Color= ({color,setSelectedColor,setColor})=>{
   return (<div className= {color}
-  onClick={()=>setSelectedColor(color)}>
+
+  onClick={()=>{setSelectedColor(color)
+    if(setSelectedColor===setSelectedColor){
+      className ={setColor}}
+    }
+  }>
   </div>
   )
 }
@@ -19,7 +24,7 @@ const App = () => {
     <div id="container">
       <div id="navbar">
         <div className>Currently selected: </div>
-        <div className ={selectedColor}>{`selectedColor ${selected}` }</div>
+        <div className ={selectedColor}>{selectedColor }</div>
       </div>
       <div id="colors-list">
         <Color color ='yellow' setSelectedColor={setSelectedColor} setColor='selected' />
